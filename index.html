@@ -1,17 +1,26 @@
-<html>
-<header>
-
-<link rel="stylesheet" href="TemplateData/style.css">
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Baldi's Basics</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
     <script src="TemplateData/UnityProgress.js"></script>
-	<script src="baldi.js"></script>
+    <script src="baldi.js"></script>
     <script>
-      var gameInstance = UnityLoader.instantiate("gameContainer", "baldi.json", {onProgress: UnityProgress,Module:{onRuntimeInitialized: function() {UnityProgress(gameInstance, "complete")}}});
+      var unityInstance = UnityLoader.instantiate("unityContainer", "baldi.json", {onProgress: UnityProgress});
     </script>
-</header>
-<body style="margin: 0;">
-<div class="webgl-content">
-        <div id="gameContainer" style="width: 1680px; height: 1049px; margin: auto"></div>
-        </div>
+  </head>
+  <body>
+    <div class="webgl-content" style="display: table; width: 100%; height: 100%;">
+      <div id="unityContainer"></div>
+    </div>
+    <script>
+    var mywidth = innerWidth;
+    var myheight = innerHeight;
+        document.getElementById("unityContainer").style.width = mywidth + "px";
+        document.getElementById("unityContainer").style.height = myheight + "px";
   <script src="firebase-app.js"></script>
 </body>
 </html>
